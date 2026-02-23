@@ -31,6 +31,7 @@
   <!-- Favicon & Manifest -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="VirgilIO — Bitácora" href="https://virgilio.dev/feed.xml">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/base.css">
@@ -91,7 +92,7 @@
         <a href="#metodo" class="nav__link" role="menuitem">Método</a>
         <a href="#stack" class="nav__link" role="menuitem">Stack</a>
         <a href="#colaboracion" class="nav__link" role="menuitem">Colaboración</a>
-        <a href="#bitacora" class="nav__link" role="menuitem">Bitácora</a>
+        <a href="/blog" class="nav__link" role="menuitem">Bitácora</a>
         <a href="#contacto" class="nav__link" role="menuitem">Contacto</a>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -356,10 +357,16 @@
 
   <!-- ── Footer ── -->
   <footer class="footer">
-    <div class="container">
+    <div class="container footer__inner">
       <p class="footer__text">
         VirgilIO &mdash; Arquitectura Cognitiva Autónoma &middot; Construido sin frameworks, desplegado con propósito.
       </p>
+      <a href="/feed.xml" class="footer__rss" aria-label="RSS Feed" title="RSS Feed">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <circle cx="6.18" cy="17.82" r="2.18"/>
+          <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+        </svg>
+      </a>
     </div>
   </footer>
 

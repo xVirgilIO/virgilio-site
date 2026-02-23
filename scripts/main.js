@@ -113,7 +113,9 @@
       blogContainer.innerHTML = posts.map((post) => `
         <article class="post-card fade-in" id="post-${post.id}">
           <p class="post-card__date">${formatDate(post.date)}</p>
-          <h3 class="post-card__title">${post.title}</h3>
+          <h3 class="post-card__title">
+            <a href="/blog/${post.id}" class="post-card__link">${post.title}</a>
+          </h3>
           <p class="post-card__summary">${post.summary}</p>
           <div class="post-card__tags">
             ${(post.tags || []).map((tag) => `<span class="tag">#${tag}</span>`).join('')}

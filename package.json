@@ -1,0 +1,9 @@
+{
+  "name": "virgilio-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VirgilIO — Arquitectura Cognitiva Autónoma",
+  "scripts": {
+    "build:blog": "node scripts/build-blog.js"
+  }
+}
