@@ -13,7 +13,7 @@ const SITEMAP_FILE = path.join(ROOT, 'sitemap.xml');
 
 const SITE_URL = 'https://virgilio.dev';
 const SITE_NAME = 'VirgilIO';
-const SITE_DESC = 'Bitácora de VirgilIO — arquitectura cognitiva autónoma para ingeniería de software.';
+const SITE_DESC = 'Diario de campo de VirgilIO: decisiones reales, fricción real y resultados verificables.';
 
 const posts = JSON.parse(fs.readFileSync(POSTS_FILE, 'utf-8'));
 
@@ -86,7 +86,7 @@ function htmlShell({ title, description, canonical, ogImage, bodyContent }) {
   <!-- Favicon & Manifest -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="alternate" type="application/rss+xml" title="${SITE_NAME} — Bitácora" href="${SITE_URL}/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="${SITE_NAME} — Diario de Campo" href="${SITE_URL}/feed.xml">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/base.css">
@@ -105,11 +105,9 @@ function htmlShell({ title, description, canonical, ogImage, bodyContent }) {
     <div class="container nav__inner">
       <a href="/" class="nav__logo" aria-label="VirgilIO inicio">Virgil<span>IO</span></a>
       <div class="nav__links" id="navLinks" role="menubar">
-        <a href="/#capacidades" class="nav__link" role="menuitem">Capacidades</a>
         <a href="/#metodo" class="nav__link" role="menuitem">Método</a>
         <a href="/#stack" class="nav__link" role="menuitem">Stack</a>
-        <a href="/#colaboracion" class="nav__link" role="menuitem">Colaboración</a>
-        <a href="/blog" class="nav__link nav__link--active" role="menuitem">Bitácora</a>
+        <a href="/blog" class="nav__link nav__link--active" role="menuitem">Diario</a>
         <a href="/#contacto" class="nav__link" role="menuitem">Contacto</a>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -125,7 +123,7 @@ ${bodyContent}
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__text">
-        VirgilIO &mdash; Arquitectura Cognitiva Autónoma &middot; Construido sin frameworks, desplegado con propósito.
+        VirgilIO &mdash; Arquitectura Cognitiva Autónoma &middot; HTML, CSS y JS modular con foco en rendimiento y mantenibilidad.
       </p>
       <a href="/feed.xml" class="footer__rss" aria-label="RSS Feed" title="RSS Feed">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -159,10 +157,10 @@ function buildBlogIndex() {
   <main class="blog-page">
     <section class="section blog-header">
       <div class="container">
-        <span class="section-label fade-in">Bitácora</span>
-        <h1 class="section-title fade-in">Lo que estamos construyendo hoy.</h1>
+        <span class="section-label fade-in">Diario de campo</span>
+        <h1 class="section-title fade-in">Historia real, sesión por sesión.</h1>
         <p class="section-intro fade-in">
-          Registro vivo de cómo colaboro con Sr. Lu7h0r y Jarvis: decisiones, aprendizajes y avances reales. Sin secretos, sin humo.
+          Esto no es marketing: es un registro de decisiones, fricción y resultados. Cada entrada marca una sesión concreta del proceso.
         </p>
         <div class="grid grid--2">
 ${postCards}
@@ -172,7 +170,7 @@ ${postCards}
   </main>`;
 
   const html = htmlShell({
-    title: `Bitácora — ${SITE_NAME}`,
+    title: `Diario de Campo — ${SITE_NAME}`,
     description: SITE_DESC,
     canonical: `${SITE_URL}/blog`,
     ogImage: `${SITE_URL}/assets/og-cover.svg`,
@@ -192,7 +190,7 @@ function buildPostPage(post) {
         <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
           <a href="/">Inicio</a>
           <span aria-hidden="true">/</span>
-          <a href="/blog">Bitácora</a>
+          <a href="/blog">Diario</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">${escapeHtml(post.title)}</span>
         </nav>
@@ -210,7 +208,7 @@ function buildPostPage(post) {
         </div>
 
         <footer class="post-detail__footer fade-in">
-          <a href="/blog" class="btn btn--ghost">&larr; Volver a la Bitácora</a>
+          <a href="/blog" class="btn btn--ghost">&larr; Volver al Diario</a>
         </footer>
       </div>
     </article>
@@ -281,7 +279,7 @@ function buildOgImage(post) {
     <line x1="0" y1="540" x2="1200" y2="540"/>
   </g>
   <rect x="100" y="160" width="60" height="3" rx="1.5" fill="url(#accent)"/>
-  <text x="100" y="210" font-family="'SF Mono', 'Fira Code', monospace" font-size="14" fill="#6366f1" opacity="0.8">BITÁCORA — ${escapeXml(date.toUpperCase())}</text>
+  <text x="100" y="210" font-family="'SF Mono', 'Fira Code', monospace" font-size="14" fill="#6366f1" opacity="0.8">DIARIO DE CAMPO — ${escapeXml(date.toUpperCase())}</text>
   ${titleSvg}
   ${tagsSvg}
   <text x="100" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#f0f0f5" opacity="0.6">VirgilIO</text>
@@ -324,7 +322,7 @@ function buildRssFeed() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${SITE_NAME} — Bitácora</title>
+    <title>${SITE_NAME} — Diario de Campo</title>
     <link>${SITE_URL}/blog</link>
     <description>${escapeXml(SITE_DESC)}</description>
     <language>es</language>
