@@ -39,13 +39,5 @@
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/feed.xml", "destination": "/feed.xml" }
-  ],
-  "overrides": {
-    "feed.xml": {
-      "contentType": "application/rss+xml; charset=utf-8"
-    }
-  }
+  "trailingSlash": false
 }
