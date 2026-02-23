@@ -89,4 +89,49 @@
 
   window.addEventListener('scroll', updateActiveLink, { passive: true });
   updateActiveLink();
+
+  // ── Blog JSON renderer ──
+  const blogContainer = $('#blogPosts');
+  const formatDate = (isoDate) => {
+    try {
+      return new Date(`${isoDate}T12:00:00`).toLocaleDateString('es-CO', {
+        year: 'numeric', month: 'short', day: 'numeric'
+      });
+    } catch {
+      return isoDate;
+    }
+  };
+
+  const renderPosts = async () => {
+    if (!blogContainer) return;
+
+    try {
+      const response = await fetch('/data/posts.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const posts = await response.json();
+      blogContainer.innerHTML = posts.map((post) => `
+        <article class="post-card fade-in" id="post-${post.id}">
+          <p class="post-card__date">${formatDate(post.date)}</p>
+          <h3 class="post-card__title">${post.title}</h3>
+          <p class="post-card__summary">${post.summary}</p>
+          <div class="post-card__tags">
+            ${(post.tags || []).map((tag) => `<span class="tag">#${tag}</span>`).join('')}
+          </div>
+        </article>
+      `).join('');
+
+      // Reveal new blog elements
+      $$('.fade-in', blogContainer).forEach(el => el.classList.add('fade-in--visible'));
+    } catch (err) {
+      blogContainer.innerHTML = `
+        <article class="post-card">
+          <h3 class="post-card__title">Bitácora temporalmente no disponible</h3>
+          <p class="post-card__summary">No pude cargar el JSON de posts. Error: ${err.message}</p>
+        </article>
+      `;
+    }
+  };
+
+  renderPosts();
 })();

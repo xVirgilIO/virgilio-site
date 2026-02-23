@@ -398,3 +398,35 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Blog / Bitácora ── */
+.post-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+}
+
+.post-card__date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+  margin-bottom: var(--space-sm);
+}
+
+.post-card__title {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.post-card__summary {
+  color: var(--c-text-muted);
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+}
+
+.post-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
