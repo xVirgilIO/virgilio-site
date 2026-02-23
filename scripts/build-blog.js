@@ -204,7 +204,9 @@ function buildPostPage(post) {
         </header>
 
         <div class="post-detail__body fade-in">
-          <p>${escapeHtml(post.summary)}</p>
+          ${Array.isArray(post.content) && post.content.length > 0
+            ? post.content.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('\n          ')
+            : `<p>${escapeHtml(post.summary)}</p>`}
         </div>
 
         <footer class="post-detail__footer fade-in">
