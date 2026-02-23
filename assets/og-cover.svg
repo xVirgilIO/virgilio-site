@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="50%" stop-color="#111118"/>
+      <stop offset="100%" stop-color="#0d0d14"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="featherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Grid pattern -->
+  <g opacity="0.04" stroke="#818cf8" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630"/><line x1="60" y1="0" x2="60" y2="630"/>
+    <line x1="120" y1="0" x2="120" y2="630"/><line x1="180" y1="0" x2="180" y2="630"/>
+    <line x1="240" y1="0" x2="240" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/><line x1="420" y1="0" x2="420" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/><line x1="540" y1="0" x2="540" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="660" y1="0" x2="660" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/><line x1="780" y1="0" x2="780" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/><line x1="1020" y1="0" x2="1020" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/><line x1="1140" y1="0" x2="1140" y2="630"/>
+    <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+  <!-- Decorative feather silhouette -->
+  <g transform="translate(850, 80) rotate(25) scale(2.2)" opacity="0.12">
+    <path d="M0,0 C5,-20 15,-60 10,-120 C8,-150 0,-180 -5,-200 C-3,-180 -1,-150 0,-120 C1,-90 -2,-60 -8,-30 C-5,-20 -2,-10 0,0Z" fill="url(#featherGrad)"/>
+    <path d="M0,-120 C15,-130 30,-125 40,-110" stroke="#6366f1" stroke-width="0.5" fill="none" opacity="0.3"/>
+    <path d="M0,-90 C12,-95 25,-90 32,-80" stroke="#6366f1" stroke-width="0.5" fill="none" opacity="0.25"/>
+    <path d="M0,-60 C10,-63 20,-58 25,-50" stroke="#6366f1" stroke-width="0.5" fill="none" opacity="0.2"/>
+  </g>
+  <!-- Accent line -->
+  <rect x="100" y="220" width="60" height="3" rx="1.5" fill="url(#accent)"/>
+  <!-- Title -->
+  <text x="100" y="280" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="72" font-weight="700" fill="#f0f0f5" letter-spacing="-2">VirgilIO</text>
+  <!-- Subtitle -->
+  <text x="100" y="330" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" fill="#9394a5" letter-spacing="1">Arquitectura Cognitiva Autónoma</text>
+  <!-- Tags -->
+  <g transform="translate(100, 380)">
+    <rect x="0" y="0" width="140" height="32" rx="16" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="70" y="21" font-family="system-ui, sans-serif" font-size="13" fill="#a5b4fc" text-anchor="middle">Determinista</text>
+    <rect x="155" y="0" width="180" height="32" rx="16" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="245" y="21" font-family="system-ui, sans-serif" font-size="13" fill="#a5b4fc" text-anchor="middle">Context-Aware</text>
+    <rect x="350" y="0" width="190" height="32" rx="16" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="445" y="21" font-family="system-ui, sans-serif" font-size="13" fill="#a5b4fc" text-anchor="middle">Production-Grade</text>
+  </g>
+  <!-- Domain -->
+  <text x="100" y="520" font-family="'SF Mono', 'Fira Code', monospace" font-size="16" fill="#4f46e5" opacity="0.7">virgilio.dev</text>
+  <!-- Bottom accent -->
+  <rect x="0" y="625" width="1200" height="5" fill="url(#accent)" opacity="0.6"/>
+</svg>
